@@ -7,14 +7,7 @@ var client = new elasticsearch.Client({
 
 client.search({
   index: 'store',
-  //q: 'storeName:燒肉',
-/*  sort: [{
-    _geo_distance: {
-      'location': [-70, 40],
-      order: 'asc',
-      unit: 'km'
-    }
-  }]*/
+  q: 'storeName:燒肉',
   body: {
     query: {
       filtered: {
