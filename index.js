@@ -6,22 +6,6 @@ var client = new elasticsearch.Client({
   log: 'trace'
 });
 
-//console.log(client);
-
-client.ping({
-  // ping usually has a 3000ms timeout
-  requestTimeout: Infinity,
-
-  // undocumented params are appended to the query string
-  hello: "elasticsearch!"
-}, function (error) {
-  if (error) {
-    console.trace('elasticsearch cluster is down!');
-  } else {
-    console.log('All is well');
-  }
-});
-
 var json = JSON.parse(fs.readFileSync('24.json', 'utf8'));
 //console.log(json);
 
@@ -34,8 +18,10 @@ for (var i in json) {
     id: json[i].id,
     body: {
       storeName: json[i].storeName,
-      latitude:  json[i].latitude,
-      longitude: json[i].longitude
+      location: {
+        lat: json[i].latitude,
+        lon: json[i].longitude
+      }
     }
   }, function (error, response) {});
 

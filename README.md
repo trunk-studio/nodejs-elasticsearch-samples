@@ -10,6 +10,12 @@ install module
 npm install
 ```
 
+init mappings
+
+```
+node init.js
+```
+
 create indices, import data to elasticsearch
 
 ```
