@@ -1,0 +1,3 @@
+
+
+curl -X POST "http://hungry.9ifriend.com/search-food/store/listByFilter/" -d '{"page":24,"category":0,"lat":22.6483444,"lng":120.3262535,"token":"","device":"web","limit":22,"type":"popular","price":null,"dis":null,"time":null}' --header "Content-Type:application/json" > 24.json
