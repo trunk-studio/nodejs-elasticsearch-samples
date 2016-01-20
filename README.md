@@ -2,7 +2,7 @@
 
 first first
 
-run elasticsearch, api endpoint will be 
+run elasticsearch, api endpoint will be http://localhost:9200/
 
 install module
 
